@@ -1,0 +1,2 @@
+module FortunesHelper
+end

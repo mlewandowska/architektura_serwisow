@@ -1,0 +1,13 @@
+<div class="attribute">
+  <span class="name"><%= t "simple_form.labels.comment.body" %></span>
+  <span class="value"><%= comment.body %></span>
+</div>
+<div class="attribute">
+  <span class="name"><%= t "simple_form.labels.comment.author" %></span>
+  <span class="value"><%= comment.author %></span>
+</div>
+
+<div class="form-actions">
+  <%= link_to 'Edit', edit_fortune_comment_path(@fortune, comment), class: 'btn-mini' %>
+  <%= link_to 'Destroy', [@fortune, comment], method: :delete, class: 'btn-mini btn-danger'%>
+</div>

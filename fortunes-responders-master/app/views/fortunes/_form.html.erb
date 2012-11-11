@@ -1,0 +1,12 @@
+<%= simple_form_for(@fortune) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :quotation, :input_html => { :rows => 6 } %>
+    <%= f.input :source %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -1,0 +1,21 @@
+<%% title "All <%= plural_table_name %>" %>
+
+<%% @<%= plural_table_name %>.each do |<%= singular_table_name %>| %>
+<article class="index">
+<% attributes.each do |attribute| -%>
+  <div class="attribute">
+    <span class="name"><%= attribute.human_name %></span>
+    <span class="value"><%%= <%= singular_table_name %>.<%= attribute.name %> %></span>
+  </div>
+<% end -%>
+<div class="form-actions">
+  <%%= link_to 'Show', <%= singular_table_name %>, <%= key_value :class, "'btn btn-mini'" %>%>
+  <%%= link_to 'Edit', edit_<%= singular_table_name %>_path(<%= singular_table_name %>), <%= key_value :class, "'btn btn-mini'" %>%>
+  <%%= link_to 'Destroy', <%= singular_table_name %>, <%= key_value :confirm, "'Are you sure?'" %>, <%= key_value :method, ":delete" %>, <%= key_value :class, "'btn btn-mini btn-danger'" %>%>
+</div>
+</article>
+<%% end %>
+
+<div class="form-actions">
+  <%%= link_to 'New <%= human_name %>', new_<%= singular_table_name %>_path, <%= key_value :class, "'btn btn-primary'" %>%>
+</div>

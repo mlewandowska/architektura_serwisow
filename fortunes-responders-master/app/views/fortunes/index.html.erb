@@ -1,0 +1,25 @@
+<% title "All fortunes" %>
+
+<div id="tag-cloud">
+  <% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
+  <%= link_to tag.name, tags_fortunes_path(name: tag.name), class: css_class %>
+  <% end %>
+</div>
+
+<%= form_tag fortunes_path, method: :get, id: "fortunes_search", class: "form-inline" do %>
+  <%= text_field_tag :query, params[:query] %>
+  <%= submit_tag "Search", name: nil, class: "btn" %>
+<% end %>
+
+<div class="digg_pagination">
+  <div class="page_info">
+    <%= page_entries_info @fortunes %>
+  </div>
+  <%= will_paginate @fortunes, :container => false %>
+</div>
+
+<%= render partial: 'fortune', collection: @fortunes %>
+
+<div class="form-actions">
+  <%= link_to 'New Fortune', new_fortune_path, class: 'btn btn-primary'%>
+</div>

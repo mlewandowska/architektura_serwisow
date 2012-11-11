@@ -1,0 +1,27 @@
+<% title "Show fortune" %>
+
+<article class="show">
+  <div class="attribute">
+    <span class="name"><%= t "simple_form.labels.fortune.quotation" %></span>
+    <span class="value"><%= @fortune.quotation %></span>
+  </div>
+  <div class="attribute">
+    <span class="name"><%= t "simple_form.labels.fortune.source" %></span>
+    <span class="value"><%= @fortune.source %></span>
+  </div>
+
+  <div class="form-actions">
+    <%= link_to 'Back', fortunes_path, class: 'btn'%>
+    <%= link_to 'Edit', edit_fortune_path(@fortune), class: 'btn' %>
+    <%= link_to 'Destroy', @fortune, confirm: 'Are you sure?', method: :delete, class: 'btn btn-danger'%>
+  </div>
+
+  <h2>Add new comment</h2>
+  <%= render partial: 'comments/form' %>
+
+  <% if @fortune.comments.any? %>
+  <h2>Comments</h2>
+  <%= render partial: 'comments/comment', collection: @fortune.comments %>
+  <% end %>
+
+</article>
