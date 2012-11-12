@@ -1,0 +1,135 @@
+body {
+  background-color: #A8A8A8;
+  color: #333;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+   text-align: left;
+   margin:0px auto;
+   overflow:hidden;
+   width: 1000px;
+}
+
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  background-color:white;
+  -webkit-border-radius: 5px;
+border-radius: 5px; 
+}
+
+#post_title {
+width:1000px;
+}
+
+#post_text{
+width:1000px;
+height:250px;
+}
+
+#ago{
+font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  
+}
+
+#title {
+text-align:center;
+font-sixe:25px;
+background-color:#8F8FBD;
+  -webkit-border-radius: 5px;
+border-radius: 5px;
+test-decoration:none;
+}
+
+#title a {
+  color: #000;
+  &:visited {
+    color: white;
+  }
+  }
+
+#kontener
+{
+font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  background-color:white;
+  -webkit-border-radius: 5px;
+border-radius: 5px;
+
+}
+
+
+
+#nowy {
+font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 20px;
+  line-height: 18px;
+  background-color:#E9C2A6;
+  -webkit-border-radius: 5px;
+border-radius: 5px; 
+}
+
+h1 {
+text-align:center;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a {
+  color: #000;
+  &:visited {
+    color: #666;
+  }
+  &:hover {
+    color: #fff;
+    background-color: #000;
+  }
+}
+
+div {
+  &.field, &.actions {
+    margin-bottom: 10px;
+  }
+}
+
+#notice {
+  color: green;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #c00;
+    color: #fff;
+    
+  }
+  ul li {
+    font-size: 12px;
+    list-style: square;
+  }
+}

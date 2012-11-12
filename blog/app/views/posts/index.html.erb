@@ -1,0 +1,18 @@
+<h1> Welcome to my Blog </h1>
+<div id="kontener">
+<% @posts.each do |post| %>
+<h2 id="title"><%= link_to post.title, post %></h2>
+<p id="ago">
+<%= time_ago_in_words post.created_at %> ago
+
+</p>
+<p>
+<% truncate post.text %>
+</p>
+<% end %>
+</div>
+<p id="nowy">
+
+<%= link_to "New post", new_post_path %>
+
+</p>
