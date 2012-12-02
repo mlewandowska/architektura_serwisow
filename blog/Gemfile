@@ -36,3 +36,13 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
+
+
+gem 'acts-as-taggable-on'
+
+
+gem "kaminari"
+
+
+

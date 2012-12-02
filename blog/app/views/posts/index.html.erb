@@ -4,13 +4,26 @@
 <h2 id="title"><%= link_to post.title, post %></h2>
 <p id="ago">
 <%= time_ago_in_words post.created_at %> ago
-
 </p>
+ 
+<p>Tags: <%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p>
+
 <p>
 <% truncate post.text %>
 </p>
 <% end %>
 </div>
+
+
+
+<div id="tag_cloud">
+  <% tag_cloud Post.tag_counts, %w{s m l} do |tag, css_class| %>
+    <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+  <% end %>
+</div>
+
+
+
 <p id="nowy">
 
 <%= link_to "New post", new_post_path %>

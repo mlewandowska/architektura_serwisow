@@ -3,9 +3,19 @@ Blog::Application.routes.draw do
 
   get "comments/destroy"
 
+ get 'tags/:tag', to: 'posts#index', as: :tag
   resources :posts do
-	resources :comments
+resources :comments
 end
+
+
+  root to: 'posts#index'
+
+
+#  resources :posts do
+#	resources :comments
+#	root to: 'posts#index'
+#end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
