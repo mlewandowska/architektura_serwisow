@@ -1,15 +1,34 @@
 Blog::Application.routes.draw do
+
+
+#  get "sessions/new"
+
+#  get "users/new"
+
+get "log_in" => "sessions#new", :as =>"log_in"
+	
+
+get "log_out" => "sessions#destroy", :as => "log_out"
+	
+
+get "sign_up" => "users#new", :as => "sign_up"
+  root :to => "users#new"
+  resources :users
+resources :sessions	
+
+
   get "comments/create"
 
   get "comments/destroy"
 
  get 'tags/:tag', to: 'posts#index', as: :tag
-  resources :posts do
-resources :comments
+  
+resources :posts do
+	resources :comments
 end
 
 
-  root to: 'posts#index'
+#  root to: 'posts#index'
 
 
 #  resources :posts do

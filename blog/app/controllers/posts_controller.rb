@@ -5,6 +5,8 @@ class PostsController < ApplicationController
 
 
     @posts = Post.all
+ #   @posts = Post.tagged_with(params[:name]).page(params[:page]).per_page(4)
+#@posts= Post.page(params[:page]).per(2)
 
 if params[:tag]
     @posts = Post.tagged_with(params[:tag])
