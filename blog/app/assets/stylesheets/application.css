@@ -12,3 +12,8 @@
  *= require_tree .
  */
 
+html {
+    height: 100%;
+    margin-bottom: 1px;
+overflow-y: scroll; }
+}
