@@ -19,7 +19,7 @@
 
 
 <div id="tag_cloud">
-  <% tag_cloud Post.tag_counts, %w{s m l} do |tag, css_class| %>
+  <% tag_cloud Post.tag_counts, %w{a b c d e f g h s m l} do |tag, css_class| %>
     <%= link_to tag.name, tag_path(tag.name), class: css_class %>
   <% end %>
 </div>
