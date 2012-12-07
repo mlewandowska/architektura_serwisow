@@ -1,0 +1,35 @@
+<h1> <%= @post.title %> </h1>
+<%= @post.text %>
+
+<h2>Comments</h2>
+<% @post.comments.each do |comment| %>
+
+
+<p> <%= comment.text %> </p>
+<p><%= time_ago_in_words comment.created_at %> ago </p>
+
+<p> <%= link_to "Delete comment", [@post, comment], :method => :delete, :confirm => "Are you sure?", :class => 'button' if is_logon_user?  %></p>
+<% end %>
+
+
+<%= form_for [@post, @post.comments.build] do |f| %>
+
+<%=
+if is_logon_user?
+	f.text_field( :author, :value => user_email, :disabled => 'disabled')
+else
+f.text_field :author 
+end %>
+
+
+<p><%= f.text_area :text, :size => '40x10' %> </p>
+<p><%= f.submit "Post comment" %></p>
+<% end %>
+
+<p>
+<%= link_to "Back", posts_path %>
+|
+<%= link_to "Edit", edit_post_path(@post), :class => 'button' if is_logon_user?  %>
+|
+<%= link_to "Delete", @post, :method => :delete, :confirm => "Are you sure?", :class => 'button' if is_logon_user?  %>
+</p>
