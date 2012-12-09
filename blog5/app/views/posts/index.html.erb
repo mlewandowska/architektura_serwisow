@@ -1,14 +1,24 @@
-<h1>  Blog </h1>
+<h1 id="tytul">  Blog </h1>
 <div id="kontener">
 
 
 <% @posts.each do |post| %>
-<h2 id="title"><%= link_to post.title, post %></h2>
+<!-- <h2 id="title"><%= link_to post.title, post %></h2> -->
+<h2 id="title"><%= post.title  %></h2>
 <p id="ago">
 <%= time_ago_in_words post.created_at %> ago
 </p>
+
+<p id="text">
+<%= post.text %>
+</p>
  
-<p>Tags: <%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p>
+<p id="comment">
+<%= link_to "Comment", post  %>
+
+</p>
+
+<p id="tags">Tags: <%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p>
 
 <p>
 <% truncate post.text %>

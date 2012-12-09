@@ -20,12 +20,13 @@ filter : alpha(opacity=50);
   .f { font-size: 1em; background-color: gray;}
   .g { font-size: 1.1em; font-style: italic; }
   .h { font-size: 1.3em; background-color: gray;}	
-border-style:dashed; 
+border-right-style:dashed; 
+border-left-style:dashed;
 border-color: black;
-border-radius:5px;	
+border-radius:8px;	
 position:absolute;
-right:40px;
-top:70px;
+right:20px;
+top:88px;
 width:300px;
 
 }
