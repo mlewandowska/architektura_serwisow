@@ -13,6 +13,11 @@
 <p id="text">
 <%= post.text %>
 </p>
+<p id="photo">
+
+<%= image_tag post.photo.url(:small) %>
+
+</p>
  
 <p id="comment">
 <%= link_to "Comment", post  %>

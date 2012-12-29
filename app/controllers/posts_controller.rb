@@ -62,7 +62,7 @@ if params[:tag]
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
+        format.html { redirect_to @post }
         format.json { render json: @post, status: :created, location: @post }
       else
         format.html { render action: "new" }
@@ -78,7 +78,7 @@ if params[:tag]
 
     respond_to do |format|
       if @post.update_attributes(params[:post])
-        format.html { redirect_to @post, notice: 'Post was successfully updated.' }
+        format.html { redirect_to @post }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
