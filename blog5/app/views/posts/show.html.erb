@@ -1,18 +1,19 @@
-<h1> <%= @post.title %> </h1>
-
+<h1 id='tytul'>Blog</h1>
 <div id="komentarze">
+<div id="tytul_posta"> <b><%= @post.title %></b> </div>
+
 <p id="zaw"><%= @post.text %> </p>
 
-<h2 id="naglowekkom">Comments</h2>
+<h2 id="naglowekkom">Komentarze</h2>
 <% @post.comments.each do |comment| %>
 
-<p><%= comment.author %></p>
+<p>Użytkownik <b><%= comment.author %></b> napisał:</p>
 
 
-<p> <%= comment.text %> </p>
+<p><i> <%= comment.text %></i> </p>
 <p id="ago"><%= time_ago_in_words comment.created_at %> ago </p>
 
-<p id="tags"> <%= link_to "Delete comment", [@post, comment], :method => :delete, :confirm => "Are you sure?", :class => 'button' if is_logon_user?  %></p>
+<p id="tags"> <%= link_to "Usuń komentarz", [@post, comment], :method => :delete, :confirm => "Are you sure?", :class => 'button' if is_logon_user?  %></p>
 <% end %>
 
 
@@ -20,10 +21,9 @@
 
 <%=
  if is_logon_user? 
-	f.text_field( :author, :value => user_email, :disabled => 'disabled')
-       
+	f.text_field( :author, :value => user_email )       
 
- else f.text_field :author
+ else f.text_field :author 
 
 end %>
 
@@ -45,9 +45,9 @@ end %>
 
 
 <p id="nowy">
-<%= link_to "Back", posts_path %>
+<%= link_to "Powrót", posts_path %>
 
-<%= link_to "Edit", edit_post_path(@post), :class => 'button' if is_logon_user?  %>
+<%= link_to "Edytuj post", edit_post_path(@post), :class => 'button' if is_logon_user?  %>
 
-<%= link_to "Delete", @post, :method => :delete, :confirm => "Are you sure?", :class => 'button' if is_logon_user?  %>
+<%= link_to "Usuń post", @post, :method => :delete, :confirm => "Are you sure?", :class => 'button' if is_logon_user?  %>
 </p>

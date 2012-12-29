@@ -15,11 +15,11 @@
 
 <div id="user_nav">
   <% if current_user %>
-    Logged in as <%= current_user.email %>
-    <%= link_to "Log out", log_out_path %>
+    Jesteś zalogowany/a jako <b> <%= current_user.email %></b>
+    <%= link_to "Wyloguj", log_out_path %>
   <% else %>
-    <%= link_to "Sign up", sign_up_path %> or 
-    <%= link_to "Log in", log_in_path %>
+    <%= link_to "Zarejestruj się", sign_up_path %> lub 
+    <%= link_to "Zaloguj", log_in_path %>
   <% end %>
 </div>
 

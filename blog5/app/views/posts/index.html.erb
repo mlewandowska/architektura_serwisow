@@ -1,3 +1,4 @@
+
 <h1 id="tytul">  Blog </h1>
 <div id="kontener">
 
@@ -18,7 +19,7 @@
 
 </p>
 
-<p id="tags">Tags: <%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p>
+<p id="tags">Tagi: <%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p>
 
 <p>
 <% truncate post.text %>
@@ -38,6 +39,6 @@
 
 <p id="nowy">
 
-<%= link_to "New post", new_post_path, :class => 'button' if is_logon_user? %>
+<%= link_to "Nowy post", new_post_path, :class => 'button' if is_logon_user? %>
 
 </p>

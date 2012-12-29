@@ -13,8 +13,14 @@ background-color:#cc9999;
 #tytul{
 color:#CC4F95;
 text-shadow: 2px 2px 2px #DDCCB5;
+margin-top:40px;
+}
 
-
+#tytul_posta{
+position:relative;
+top:0px;
+color:black;
+font-size:20px;
 
 }
 
@@ -96,8 +102,9 @@ font-family: verdana, arial, helvetica, sans-serif;
   -webkit-border-radius: 5px;
 border-radius: 5px;
 width:770px;
-position:relative;
-top:20px;
+position:absolute;
+top:90px;
+left:100px;
 border-left-style:dashed;
 border-right-style:dashed;
 }
@@ -123,12 +130,18 @@ font-family: verdana, arial, helvetica, sans-serif;
   -webkit-border-radius: 5px;
 opacity:0.5;
 border-radius: 5px; 
-position:absolute;
-right:20px;
-top:250px;
-width:300px;
+ position: fixed;
+    top: 50px;
+left:950px;
+    width: 300px;
 border-left-style:dashed;
 border-right-style:dashed;
+}
+
+#tnp{
+color:black;
+font-size:20px;
+
 }
 
 h1 {
@@ -198,6 +211,9 @@ div {
 	opacity:0.5;
 	filter: alpha(opacity=50);
 	border-radius: 5px;
+position:absolute;
+width:1200px;
+left:90px;
 }
 
 #signup
