@@ -1,0 +1,20 @@
+<body>
+<div id="kontener">
+<div id="tnp">Edytuj Post</div>
+<p>
+<%= render 'form' %>
+</p>
+</div>
+</div>
+
+<div id="tag_cloud">
+ <% tag_cloud Post.tag_counts, %w{ a b c d e f g h s m l} do |tag, css_class| %>
+   <% link_to tag.name, tag_path(tag.name), class: css_class %>
+ <% end %>
+</div>
+
+<p id="nowy">
+<%= link_to 'Pokaż post', @post %> |
+<%= link_to 'Powrót', posts_path %>
+</p>
+</body>

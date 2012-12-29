@@ -1,0 +1,50 @@
+
+
+<h1>Sign Up</h1>
+
+<div id="signup">
+<%= form_for @user do |f| %>
+  <% if @user.errors.any? %>
+    <div class="error_messages">
+      <h2>Form is invalid</h2>
+      <ul>
+        <% for message in @user.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <p>
+    
+    <!-- <%= f.label :email %> -->
+
+<br/>    <%= f.text_field :email, :placeholder => "Email" %>
+  
+  
+   <!-- <%= f.label :password %> -->
+<br/>    <%= f.password_field :password, :placeholder => "Password" %>
+  
+
+    <!-- <%= f.label :password_confirmation %> -->
+ <br/>   <%= f.password_field :password_confirmation, :placeholder => "Confirm password" %>
+
+
+  </p>
+
+  <%= f.submit "Sign up"  %>
+
+<% end %>
+
+</div>
+
+<div id="tag_cloud">
+  <% tag_cloud Post.tag_counts, %w{a b c d e f g h s m l} do |tag, css_class| %>
+    <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+  <% end %>
+</div>
+<p id="nowy">
+<%= link_to 'Back', posts_path %>
+</p>
+

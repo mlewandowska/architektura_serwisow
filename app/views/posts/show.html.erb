@@ -1,0 +1,53 @@
+<h1 id='tytul'>Blog</h1>
+<div id="komentarze">
+<div id="tytul_posta"> <b><%= @post.title %></b> </div>
+
+<p id="zaw"><%= @post.text %> </p>
+
+<h2 id="naglowekkom">Komentarze</h2>
+<% @post.comments.each do |comment| %>
+
+<p>Użytkownik <b><%= comment.author %></b> napisał:</p>
+
+
+<p><i> <%= comment.text %></i> </p>
+<p id="ago"><%= time_ago_in_words comment.created_at %> ago </p>
+
+<p id="tags"> <%= link_to "Usuń komentarz", [@post, comment], :method => :delete, :confirm => "Are you sure?", :class => 'button' if is_logon_user?  %></p>
+<% end %>
+
+
+<%= form_for [@post, @post.comments.build] do |f| %>
+
+<%=
+ if is_logon_user? 
+	f.text_field( :author, :value => user_email )       
+
+ else f.text_field :author 
+
+end %>
+
+<p><%= f.text_area :text, :size => '40x10' %></p>
+<p><%= f.submit "Comment" %></p>
+<% end %>
+
+
+</div>
+ 
+
+
+<div id="tag_cloud">
+  <% tag_cloud Post.tag_counts, %w{a b c d e f g h s m l} do |tag, css_class| %>
+    <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+  <% end %>
+</div>
+
+
+
+<p id="nowy">
+<%= link_to "Powrót", posts_path %>
+
+<%= link_to "Edytuj post", edit_post_path(@post), :class => 'button' if is_logon_user?  %>
+
+<%= link_to "Usuń post", @post, :method => :delete, :confirm => "Are you sure?", :class => 'button' if is_logon_user?  %>
+</p>

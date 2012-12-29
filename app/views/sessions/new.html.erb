@@ -1,0 +1,29 @@
+
+<body>
+<h1>Log in</h1>
+<div id="signup">
+<%= form_tag sessions_path do %>
+  <p>
+    <%= label_tag :email %><br />
+    <%= text_field_tag :email, params[:email] %>
+  </p>
+  <p>
+    <%= label_tag :password %><br />
+    <%= password_field_tag :password %>
+  </p>
+  <p class="button"><%= submit_tag %></p>
+<% end %>
+</div>
+
+
+
+
+<div id="tag_cloud">
+  <% tag_cloud Post.tag_counts, %w{a b c d e f g h s m l} do |tag, css_class| %>
+    <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+  <% end %>
+</div>
+<p id="nowy">
+<%= link_to 'Back', posts_path %>
+</p>
+</body>
