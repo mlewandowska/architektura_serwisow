@@ -2,7 +2,7 @@
 <h1 id="tytul">  Blog </h1>
 <div id="kontener">
 
-
+<% @posts.all(:order => 'id DESC') %>
 <% @posts.each do |post| %>
 <!-- <h2 id="title"><%= link_to post.title, post %></h2> -->
 <h2 id="title"><%= post.title  %></h2>
