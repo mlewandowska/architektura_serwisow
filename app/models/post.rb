@@ -15,9 +15,11 @@ has_attached_file :photo, :styles => { :small => "500x500>" },
                  # :path => ":attachment/:id/:style.:extension",
                  # :bucket => 'yourbucket'
 
+validates_presence_of :photo, :text
 
 validates_attachment_size :photo, :less_than => 5.megabytes
 validates_attachment_content_type :photo, :content_type => ['image/jpeg', 'image/png']
 
+validates :title, :length => { :minimum => 2}
 
 end

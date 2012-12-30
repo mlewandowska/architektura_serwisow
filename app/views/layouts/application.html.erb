@@ -11,12 +11,10 @@
 <body>
 
 
-
-
 <div id="user_nav">
   <% if current_user %>
 <div style="float:left;">
-    Jesteś zalogowany/a jako <b> <%= current_user.email %></b>
+    Witaj <b> <%= current_user.email %></b>
 </div>
 <div style="float:right;">
     <%= button_to "Wyloguj", log_out_path, :method => :get %>
@@ -39,10 +37,6 @@
 
 
 </div>
-
-
-
-
 
 <% flash.each do |name, msg| %>
 	<%= content_tag :div, msg, :id => "flash#{name}" %>

@@ -1,6 +1,12 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   helper_method :current_user, :is_logon_user?, :user_email
+
+before_filter :set_locale
+
+  def set_locale
+    I18n.locale = params[:locale]
+  end
   
   private
   def current_user

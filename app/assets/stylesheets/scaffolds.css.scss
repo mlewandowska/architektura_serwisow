@@ -1,7 +1,8 @@
 
 body {  
 background-color:#8b8989;
-  color: black;
+background-image:url('http://3.bp.blogspot.com/-frrIKCxgU64/T60718wySaI/AAAAAAAACnU/F5Cmu8Jkv3Y/s1600/GreenPolkaDotPaper.png');  
+ color: black;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
@@ -10,10 +11,53 @@ background-color:#8b8989;
    overflow:hidden;
    width: 1000px;
 }
-#tytul{
-color:#CC4F95;
-text-shadow: 2px 2px 2px #DDCCB5;
-margin-top:50px;
+
+#tytul2{
+position:relative;
+top:0px;
+left:10px;
+}
+
+h1 {
+color: #fff;
+font-size: 220px;
+    line-height: 220px;
+    font-family: 'Lobster13Regular', Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: rgba(0, 0, 0, .2) 3px 3px 3px;
+     position:relative;
+top:-200px;
+left:-110px;
+    /*text stroke*/
+    -webkit-text-stroke: 4px rgba(0, 0, 0, .6);    
+}
+ 
+@font-face {
+    font-family: 'Lobster13Regular';
+    src: url('Lobster_1.3-webfont.eot');
+    src: local('.'), url('Lobster_1.3-webfont.woff') format('woff'), url('Lobster_1.3-webfont.ttf') format('truetype'), url('Lobster_1.3-webfont.svg#webfontcOtP3oQb') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+
+
+.change_link {
+	display: block;
+	width: 20px;
+	height: 20px;
+	font-size: 12pt;
+	background-color: #eee;
+	float: left;
+	margin-right: 5px;
+	text-align: center;
+	margin-top: 10px;
+	border: 1px solid #bbb;
+	text-decoration: none;
 }
 
 #tytul_posta{
@@ -25,7 +69,7 @@ font-size:20px;
 }
 
 #addForm{
-
+border-radius:5px;
 height:500px;
 
 }
@@ -104,12 +148,12 @@ margin-right:30px;
 font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
-  background-color:#f5deb3;
+  background-color:#CDC8B1;
   -webkit-border-radius: 5px;
 border-radius: 5px;
 width:770px;
 position:absolute;
-top:90px;
+top:181px;
 left:100px;
 
 
@@ -149,10 +193,6 @@ font-size:20px;
 
 }
 
-h1 {
-text-align:center;
-}
-
 pre {
   background-color: #eee;
   padding: 10px;
@@ -165,7 +205,7 @@ a {
     color: #666;
   }
   &:hover {
-    color: #fff;
+    color: #CDC8BI;
     background-color: #000;
   }
 }
@@ -180,13 +220,13 @@ div {
   color: green;
 }
 
-.ield_with_errors {
+.field_with_errors {
   padding: 2px;
   background-color: red;
   display: table;
 }
 
-#rror_explanation {
+#error_explanation {
   width: 450px;
   border: 2px solid red;
   padding: 7px;
@@ -266,9 +306,4 @@ width:300px;
 
 }
 
-h1{
-color: purple;
-text-shadow: 2px 2px 2px #ddccb5;
-
-}
 

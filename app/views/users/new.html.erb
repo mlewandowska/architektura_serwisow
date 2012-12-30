@@ -1,5 +1,10 @@
 
-<div id="signup">
+<div id="tytul2">
+ <h1 id="tytul">  Blog </h1>
+</div>
+
+
+<div id="kontener">
 <%= form_for @user do |f| %>
   <% if @user.errors.any? %>
     <div class="error_messages">
@@ -13,24 +18,25 @@
   <% end %>
 
 
-  <p>
+  <p id="foremka">
     
-    <!-- <%= f.label :email %> -->
+     <%= f.label :email %> 
 
-<br/>    <%= f.text_field :email, :placeholder => "Email" %>
-  
-  
-   <!-- <%= f.label :password %> -->
-<br/>    <%= f.password_field :password, :placeholder => "Password" %>
-  
+   <br/> <%= f.text_field :email %>
+</p>  
+  <p id="foremka">
+    <%= f.label :password %> 
+<br/>    <%= f.password_field :password %>
+  </p>
 
-    <!-- <%= f.label :password_confirmation %> -->
- <br/>   <%= f.password_field :password_confirmation, :placeholder => "Confirm password" %>
+ <p id="foremka">
+    <%= f.label :password_confirmation %> 
+ <br/>   <%= f.password_field :password_confirmation %>
 
 
   </p>
 
-  <%= f.submit "Zaerejestruj"  %>
+  <%= f.submit "Zarejestruj"  %>
 
 <% end %>
 
@@ -41,7 +47,5 @@
     <%= link_to tag.name, tag_path(tag.name), class: css_class %>
   <% end %>
 </div>
-<p id="nowy">
-<%= link_to 'Back', posts_path %>
-</p>
+
 
