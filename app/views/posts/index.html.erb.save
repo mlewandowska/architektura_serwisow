@@ -1,0 +1,47 @@
+
+<h1 id="tytul">  Blog </h1>
+<div id="kontener">
+
+<% @posts=Post.all(:order => 'id DESC') %>
+<% @posts.each do |post| %>
+<!-- <h2 id="title"><%= link_to post.title, post %></h2> -->
+<h2 id="title"><%= post.title  %></h2>
+<p id="ago">
+<%= time_ago_in_words post.created_at %> ago
+</p>
+
+<p id="text">
+<%= post.text %>
+</p>
+<p id="photo">
+<%= image_tag @post.photo.url(:small)  %>
+</p>
+ 
+<p id="comment">
+<%= link_to "Comment", post  %>
+
+</p>
+
+<p id="tags">Tagi: <%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p>
+
+<p>
+<% truncate post.text %>
+</p>
+<% end %>
+</div>
+
+
+
+<div id="tag_cloud">
+  <% tag_cloud Post.tag_counts, %w{a b c d e f g h s m l} do |tag, css_class| %>
+    <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+  <% end %>
+</div>
+
+
+
+<p id="nowy">
+
+<%= link_to "Nowy post", new_post_path, :class => 'button' if is_logon_user? %>
+
+</p>
