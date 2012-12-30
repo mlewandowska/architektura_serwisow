@@ -19,18 +19,18 @@
     Jesteś zalogowany/a jako <b> <%= current_user.email %></b>
 </div>
 <div style="float:right;">
-    <%= button_to "Wyloguj", log_out_path %>
+    <%= button_to "Wyloguj", log_out_path, :method => :get %>
 </div>
   <% else %>
 <div style="float:right;">
-    <%= button_to "Zarejestruj się", sign_up_path %> 
+    <%= button_to "Zarejestruj się", sign_up_path, :method => :get %> 
 </div>
 <div style="float:right;">
-    <%= button_to "Zaloguj", log_in_path %>
+    <%= button_to "Zaloguj", log_in_path, :method => :get %>
 </div>
   <% end %>
 <div style="float:right;">
-<%= button_to "Nowy post", new_post_path, :class => 'button' if is_logon_user? %>
+<%= button_to "Nowy post", new_post_path, :method => :get, :class => 'button' if is_logon_user? %>
 </div>
 
 <div style="float:right;">

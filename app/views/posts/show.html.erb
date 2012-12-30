@@ -49,7 +49,7 @@ end %>
 <div>
 <center>
 <div style="float:right;">
-<%= button_to "Edytuj post", edit_post_path(@post), :class => 'button' if is_logon_user?  %>
+<%= button_to "Edytuj post", edit_post_path(@post), :method => :get,  :class => 'button' if is_logon_user?  %>
 </div>
 <div style="float:right;">
 <%= button_to "Skasuj post", @post, :method => :delete, :confirm => "Na pewno?", :class => 'button' if is_logon_user? %>
