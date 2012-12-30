@@ -1,0 +1,224 @@
+pl:
+  date:
+    abbr_day_names:
+    - nie
+    - pon
+    - wto
+    - ¶ro
+    - czw
+    - pi±
+    - sob
+    abbr_month_names:
+    -
+    - sty
+    - lut
+    - mar
+    - kwi
+    - maj
+    - cze
+    - lip
+    - sie
+    - wrz
+    - pa¼
+    - lis
+    - gru
+    day_names:
+    - niedziela
+    - poniedzia³ek
+    - wtorek
+    - ¶roda
+    - czwartek
+    - pi±tek
+    - sobota
+    formats:
+      default: ! '%d-%m-%Y'
+      long: ! '%B %d, %Y'
+      short: ! '%d %b'
+    month_names:
+    -
+    - styczeñ
+    - luty
+    - marzec
+    - kwiecieñ
+    - maj
+    - czerwiec
+    - lipiec
+    - sierpieñ
+    - wrzesieñ
+    - pa¼dziernik
+    - listopad
+    - grudzieñ
+    order:
+    - :day
+    - :month
+    - :year
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        few: oko³o %{count} godziny
+        one: oko³o godziny
+        other: oko³o %{count} godzin
+        many: oko³o %{count} godzin
+      about_x_months:
+        few: oko³o %{count} miesi±ce
+        one: oko³o miesi±ca
+        other: oko³o %{count} miesiêcy
+        many: oko³o %{count} miesiêcy
+      about_x_years:
+        few: oko³o %{count} lata
+        one: oko³o rok
+        other: oko³o %{count} lat
+        many: oko³o %{count} lat
+      almost_x_years:
+        few: prawie %{count} lata
+        one: prawie rok
+        other: prawie %{count} lat
+        many: prawie %{count} lat
+      half_a_minute: pó³ minuty
+      less_than_x_minutes:
+        few: mniej ni¿ %{count} minuty
+        one: mniej ni¿ minutê
+        other: mniej ni¿ %{count} minut
+        many: mniej ni¿ %{count} minut
+      less_than_x_seconds:
+        few: mniej ni¿ %{count} sekundy
+        one: mniej ni¿ sekundê
+        other: mniej ni¿ %{count} sekund
+        many: mniej ni¿ %{count} sekund
+      over_x_years:
+        few: ponad %{count} lata
+        one: ponad rok
+        other: ponad %{count} lat
+        many: ponad %{count} lat
+      x_days:
+        few: ! '%{count} dni'
+        one: 1 dzieñ
+        other: ! '%{count} dni'
+        many: ! '%{count} dni'
+      x_minutes:
+        few: ! '%{count} minuty'
+        one: 1 minuta
+        other: ! '%{count} minut'
+        many: ! '%{count} minut'
+      x_months:
+        few: ! '%{count} miesi±ce'
+        one: 1 miesi±c
+        other: ! '%{count} miesiêcy'
+        many: ! '%{count} miesiêcy'
+      x_seconds:
+        few: ! '%{count} sekundy'
+        one: 1 sekunda
+        other: ! '%{count} sekund'
+        many: ! '%{count} sekund'
+    prompts:
+      day: Dzieñ
+      hour: Godzina
+      minute: Minuta
+      month: Miesi±c
+      second: Sekundy
+      year: Rok
+  errors: &errors
+    format: ! '%{attribute} %{message}'
+    messages:
+      accepted: musi zostaæ zaakceptowane
+      blank: nie mo¿e byæ puste
+      confirmation: nie zgadza siê z potwierdzeniem
+      empty: nie mo¿e byæ puste
+      equal_to: musi byæ równe %{count}
+      even: musi byæ parzyste
+      exclusion: jest zarezerwowane
+      greater_than: musi byæ wiêksze od %{count}
+      greater_than_or_equal_to: musi byæ wiêksze lub równe %{count}
+      inclusion: nie znajduje siê na li¶cie dopuszczalnych warto¶ci
+      invalid: jest nieprawid³owe
+      less_than: musi byæ mniejsze od %{count}
+      less_than_or_equal_to: musi byæ mniejsze lub równe %{count}
+      not_a_number: nie jest liczb±
+      not_an_integer: musi byæ liczb± ca³kowit±
+      odd: musi byæ nieparzyste
+      record_invalid: ! 'Negatywne sprawdzenie poprawno¶ci: %{errors}'
+      taken: zosta³o ju¿ zajête
+      too_long: jest za d³ugie (maksymalnie %{count} znaków)
+      too_short: jest za krótkie (przynajmniej %{count} znaków)
+      wrong_length: ma nieprawid³ow± d³ugo¶æ (powinna wynosiæ %{count} znaków)
+    template:
+      body: ! 'B³êdy dotycz± nastêpuj±cych pól:'
+      header:
+        one: ! '%{model} nie zosta³ zachowany z powodu jednego b³êdu'
+        few: ! '%{model} nie zosta³ zachowany z powodu %{count} b³êdów'
+        other: ! '%{model} nie zosta³ zachowany z powodu %{count} b³êdów'
+  helpers:
+    select:
+      prompt: Proszê wybraæ
+    submit:
+      create: Utwórz %{model}
+      submit: Zapisz %{model}
+      update: Aktualizuj %{model}
+  number:
+    currency:
+      format:
+        delimiter: ! ' '
+        format: ! '%u %n'
+        precision: 2
+        separator: ! ','
+        significant: false
+        strip_insignificant_zeros: true
+        unit: PLN
+    format:
+      delimiter: ! ' '
+      precision: 3
+      separator: ! ','
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: ! '%n %u'
+        units:
+          billion: Miliard
+          million: Milion
+          quadrillion: Biliard
+          thousand: Tysi±c
+          trillion: Bilion
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: ! '%n %u'
+        units:
+          byte:
+            one: bajt
+            few: bajty
+            many: bajty
+            other: bajty
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: ''
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: ! ' oraz '
+      two_words_connector: ! ' i '
+      words_connector: ! ', '
+  time:
+    am: przed po³udniem
+    formats:
+      default: ! '%a, %d %b %Y %H:%M:%S %z'
+      long: ! '%B %d, %Y %H:%M'
+      short: ! '%d %b %H:%M'
+    pm: po po³udniu
+  # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
+  activemodel:
+    errors:
+      <<: *errors
+  activerecord:
+    errors:
+      <<: *errors
