@@ -15,12 +15,29 @@
 
 <div id="user_nav">
   <% if current_user %>
+<div style="float:left;">
     Jesteś zalogowany/a jako <b> <%= current_user.email %></b>
-    <%= link_to "Wyloguj", log_out_path %>
+</div>
+<div style="float:right;">
+    <%= button_to "Wyloguj", log_out_path %>
+</div>
   <% else %>
-    <%= link_to "Zarejestruj się", sign_up_path %> lub 
-    <%= link_to "Zaloguj", log_in_path %>
+<div style="float:right;">
+    <%= button_to "Zarejestruj się", sign_up_path %> 
+</div>
+<div style="float:right;">
+    <%= button_to "Zaloguj", log_in_path %>
+</div>
   <% end %>
+<div style="float:right;">
+<%= button_to "Nowy post", new_post_path, :class => 'button' if is_logon_user? %>
+</div>
+
+<div style="float:right;">
+<%= button_to "Home", root_path %>
+</div>
+
+
 </div>
 
 

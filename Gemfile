@@ -6,6 +6,9 @@ gem 'rails', '3.2.8'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'paperclip'
+
+#gem 'paperclipdropbox', :git => 'git://github.com/espresse/paperclipdropbox.git'
+
 gem 'sqlite3', '~> 1.3.6', :groups => [:test, :development]
 gem 'pg', '~> 0.14.1', :groups => :production
 

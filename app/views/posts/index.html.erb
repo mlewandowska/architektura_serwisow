@@ -5,7 +5,7 @@
 <% @posts=Post.all(:order => 'id DESC') %>
 <% @posts.each do |post| %>
 <!-- <h2 id="title"><%= link_to post.title, post %></h2> -->
-<h2 id="title"><%= post.title  %></h2>
+<h2 id="title"><%=  post.title  %></h2>
 <p id="ago">
 <%= time_ago_in_words post.created_at %> ago
 </p>
@@ -14,13 +14,14 @@
 <%= post.text %>
 </p>
 <p id="photo">
-
+<center>
 <%= image_tag post.photo.url(:small) %>
-
+</center>
 </p>
  
 <p id="comment">
-<%= link_to "Comment", post  %>
+
+<%= button_to "Skomentuj", post  %>
 
 </p>
 
@@ -42,8 +43,4 @@
 
 
 
-<p id="nowy">
 
-<%= link_to "Nowy post", new_post_path, :class => 'button' if is_logon_user? %>
-
-</p>

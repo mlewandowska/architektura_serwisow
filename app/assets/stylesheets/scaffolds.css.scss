@@ -1,6 +1,6 @@
 
 body {  
-background-color:#cc9999;
+background-color:#8b8989;
   color: black;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
@@ -13,7 +13,7 @@ background-color:#cc9999;
 #tytul{
 color:#CC4F95;
 text-shadow: 2px 2px 2px #DDCCB5;
-margin-top:40px;
+margin-top:50px;
 }
 
 #tytul_posta{
@@ -59,7 +59,7 @@ font-family: verdana, arial, helvetica, sans-serif;
 font-size:15px;
 text-align:right;
 opacity: 0.5;
-margin-left:10px;
+margin-left:100px;
 }
 
 #naglowekkom{
@@ -80,6 +80,7 @@ border-bottom-style:dashed;
 text-align:center;
 font-sixe:25px;
 background-color:white;
+color:black;
 opacity:0.5;
   -webkit-border-radius: 5px;
 border-radius: 5px;
@@ -87,26 +88,31 @@ test-decoration:none;
 }
 
 #title a {
-  color: #000;
+  color: #00000;
   &:visited {
-    color: white;
+    color: black;
   }
   }
+
+.button #nowy{
+position:relative;
+margin-right:30px;
+}
 
 #kontener
 {
 font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
-  background-color:#ffcccc;
+  background-color:#f5deb3;
   -webkit-border-radius: 5px;
 border-radius: 5px;
 width:770px;
 position:absolute;
 top:90px;
 left:100px;
-border-left-style:dashed;
-border-right-style:dashed;
+
+
 }
 
 #komentarze{
@@ -134,8 +140,7 @@ border-radius: 5px;
     top: 50px;
 left:950px;
     width: 300px;
-border-left-style:dashed;
-border-right-style:dashed;
+
 }
 
 #tnp{
@@ -214,6 +219,8 @@ div {
 position:absolute;
 width:1200px;
 left:90px;
+text-align:right;
+
 }
 
 #signup
@@ -250,10 +257,8 @@ filter : alpha(opacity=50);
   .f { font-size: 1em; background-color: gray;}
   .g { font-size: 1.1em; font-style: italic; }
   .h { font-size: 1.3em; background-color: gray;}	
-border-right-style:dashed; 
-border-left-style:dashed;
-border-color: black;
-border-radius:8px;	
+
+border-radius:5px;
 position:fixed;
 left:950px;
 top:100px;

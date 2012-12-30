@@ -1,8 +1,8 @@
 <h1 id='tytul'>Blog</h1>
-<div id="komentarze">
+<div id="kontener">
 <div id="tytul_posta"> <b><%= @post.title %></b> </div>
 
-<p id="zaw"><%= @post.text %> </p>
+<p><%= @post.text %> </p>
 
 <h2 id="naglowekkom">Komentarze</h2>
 <% @post.comments.each do |comment| %>
@@ -12,6 +12,7 @@
 
 <p><i> <%= comment.text %></i> </p>
 <p id="ago"><%= time_ago_in_words comment.created_at %> ago </p>
+
 
 <p id="tags"> <%= link_to "Usuń komentarz", [@post, comment], :method => :delete, :confirm => "Are you sure?", :class => 'button' if is_logon_user?  %></p>
 <% end %>
@@ -28,7 +29,7 @@
 end %>
 
 <p><%= f.text_area :text, :size => '40x10' %></p>
-<p><%= f.submit "Comment" %></p>
+<p><%= f.submit "Skomentuj" %></p>
 <% end %>
 
 
@@ -44,10 +45,15 @@ end %>
 
 
 
-<p id="nowy">
-<%= link_to "Powrót", posts_path %>
-
-<%= link_to "Edytuj post", edit_post_path(@post), :class => 'button' if is_logon_user?  %>
-
-<%= link_to "Usuń post", @post, :method => :delete, :confirm => "Are you sure?", :class => 'button' if is_logon_user?  %>
-</p>
+<div id="nowy">
+<div>
+<center>
+<div style="float:right;">
+<%= button_to "Edytuj post", edit_post_path(@post), :class => 'button' if is_logon_user?  %>
+</div>
+<div style="float:right;">
+<%= button_to "Skasuj post", @post, :method => :delete, :confirm => "Na pewno?", :class => 'button' if is_logon_user? %>
+</div>
+</center>
+</div>
+</div>

@@ -3,6 +3,8 @@ Blog::Application.routes.draw do
 
 #  get "users/new"
 
+#get '/' => "posts/index", :as => "home"
+
 root :to => "posts#index"
 
 get "log_in" => "sessions#new", :as =>"log_in"

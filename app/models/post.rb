@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  attr_accessible :text, :title, :tag_list, :photo
+  attr_accessible :text, :title, :tag_list, :photo, :photo_file_name, :photo_content_type, :photo_file_size, :photo_updated_at
 has_many :comments	
 acts_as_taggable
 
@@ -10,8 +10,12 @@ acts_as_taggable
 has_attached_file :photo, :styles => { :small => "500x500>" },
                   :url  => "/assets/posts/:id/:style/:basename.:extension",
                   :path => ":rails_root/public/assets/posts/:id/:style/:basename.:extension"
+                  #:storage => :database
+                 # :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
+                 # :path => ":attachment/:id/:style.:extension",
+                 # :bucket => 'yourbucket'
 
-validates_attachment_presence :photo
+
 validates_attachment_size :photo, :less_than => 5.megabytes
 validates_attachment_content_type :photo, :content_type => ['image/jpeg', 'image/png']
 
