@@ -9,7 +9,7 @@
 <div id="tytul_posta"> <b><%= @post.title %></b> </div>
 
 <p><%= @post.text %> </p>
-
+<p><center><%= image_tag @post.photo.url(:small) %></center></p>
 <h2 id="naglowekkom">Komentarze</h2>
 <% @post.comments.each do |comment| %>
 

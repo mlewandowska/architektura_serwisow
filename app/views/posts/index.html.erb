@@ -6,12 +6,12 @@
 
 <div id="kontener">
 
-<% @posts=Post.all(:order => 'id DESC') %>
-<% @posts.each do |post| %>
+
+<% @posts.each  do |post| %>
 <!-- <h2 id="title"><%= link_to post.title, post %></h2> -->
 <h2 id="title"><%= link_to  post.title, post  %></h2>
 <p id="ago">
-<%= time_ago_in_words post.created_at %> ago
+<%= time_ago_in_words post.created_at %> ago 
 </p>
 
 <p id="text">
