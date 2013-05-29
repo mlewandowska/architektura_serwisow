@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: posts
+#
+#  id                 :integer          not null, primary key
+#  title              :string(255)
+#  text               :text
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#  photo_file_name    :string(255)
+#  photo_content_type :string(255)
+#  photo_file_size    :integer
+#  photo_updated_at   :datetime
+#
+
 class Post < ActiveRecord::Base
   attr_accessible :text, :title, :tag_list, :photo, :photo_file_name, :photo_content_type, :photo_file_size, :photo_updated_at
 has_many :comments	
